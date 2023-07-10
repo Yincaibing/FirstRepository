@@ -12,16 +12,18 @@ Go语言确实没有"类"的概念。这主要是因为Go语言设计者认为�
 Go语言鼓励使用【组合代替继承】，通过【为结构体添加方法来实现面向对象】的特性。通过结构体来组合数据和行为，可以灵活地构建和管理对象的行为
 
 注：方法与函数的区别：
-方法只是个带接收者参数的函数。
+参考这里，关于面向对象这里讲的很通透
+https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/02.5.md
 
-
+method的语法如下：
+func (r ReceiverType) funcName(parameters) (results)
 */
 
 type Vertex struct {
 	X, Y float64
 }
 
-func (v Vertex) Abs() float64 {    //方法接收者在它自己的参数列表内，位于 func 关键字和方法名之间。
+func (v Vertex) Abs() float64 {    //方法接收者在它自己的参数列表内，位于 func 关键字和方法名之间。这是不同于函数的地方，他们有自己的接受者，Abs方法依赖于 Vertex结构体对象来接受他
 	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
