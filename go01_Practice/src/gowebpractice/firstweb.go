@@ -29,6 +29,12 @@ func login(w http.ResponseWriter, r *http.Request) {
 		log.Println(t.Execute(w, nil))
 	} else {
 		//请求的是登录数据，那么执行登录的逻辑判断
+		r.ParseForm() //这里是解析表单数据
+		//下面开始验证表单输入的逻辑
+		if len(r.Form["username"][0])==0{
+			fmt.Println("username为空")
+		}
+		fmt.Println("form:", r.Form)
 		fmt.Println("username:", r.Form["username"])
 		fmt.Println("password:", r.Form["password"])
 	}

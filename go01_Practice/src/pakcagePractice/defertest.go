@@ -1,6 +1,6 @@
 package main
 
-//defer
+//defer:Go 里面有一个机制，允许你从方法返回的前一刻，执行一段逻辑,也叫做延迟调用
 
 import (
 	"fmt"

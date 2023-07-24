@@ -21,7 +21,7 @@ a = s
 */
 
 func main() {
-	//这个 i接口没有指定任何方法
+	//这个 i接口没有实现任何方法
 	var i interface{}
 	describe123(i)
 
